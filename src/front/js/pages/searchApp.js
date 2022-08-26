@@ -3,7 +3,7 @@ import { SearchBar } from "../component/searchBar";
 
 export const SearchApp = () => {
   return (
-    <div className="App">
+    <div className="container App">
       <SearchBar />
     </div>
   );

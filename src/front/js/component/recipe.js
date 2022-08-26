@@ -18,7 +18,7 @@ const Recipe = (props) => {
       <div className="position-relative">
         <img src={props.image} className="img-recipe" alt="receta" />
         <div className="buttonImage position-absolute bottom-0 start-0 m-3">
-          <Link to={`/detail/${props.id}`} className="button1">
+          <Link to={`/detail/${props.id}`} className="buttonDetail">
             VER
           </Link>
         </div>
@@ -30,13 +30,12 @@ const Recipe = (props) => {
             <button
               onClick={handleClick}
               className={
-                Click === true
+                Click === true || props.is_favorite == true
                   ? "love btn border-0 text-danger"
                   : "love2 btn border-0 text-muted"
               }
             >
-              <i className="heart fas fa-heart"> </i>
-            </button>
+              <i class="fas fa-heart"></i></button>
           ) : (
             ""
           )}
@@ -61,6 +60,7 @@ Recipe.propTypes = {
   image: PropTypes.string,
   id: PropTypes.number,
   categories: PropTypes.array,
+  is_favorite: PropTypes.bool,
 };
 
 export default Recipe;

@@ -50,6 +50,8 @@ class Recipes(db.Model):
     cookingtime = db.Column(db.String(250), nullable=True)
     favorites = db.relationship('RecipesFavorites', backref = 'Recipes')
     ingredients = db.relationship('RecipesIngredients', backref = 'Recipes')
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable= True)
+    user = db.relationship('User', backref = 'recipe')
 
     def __repr__(self):
         return f'<Recipes %r>' % self.name
@@ -64,6 +66,7 @@ class Recipes(db.Model):
             "cookingtime": self.cookingtime,
             "ingredients": [ingredient.serialize() for ingredient in self.ingredients],
             "categories": [item.category.serialize() for item in self.recipecategory],
+            "user_id": self.user.id if self.user else None,
         }
 
 
@@ -161,7 +164,7 @@ class RecipeCategories(db.Model):
 
 
     def __repr__(self):
-        return f'<RecipesCategories %r>' % self.recipes.name
+        return f'<RecipesCategories %r>' % self.recipes
 
 
 

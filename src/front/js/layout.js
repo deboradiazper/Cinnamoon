@@ -11,6 +11,7 @@ import { User } from "./pages/user";
 import { UserArea } from "./pages/userArea";
 import { RegistrationValidated } from "./pages/registrationValidated";
 import { SearchApp } from "./pages/searchApp";
+import { AboutUs } from "./pages/aboutUs";
 
 import injectContext from "./store/appContext";
 
@@ -42,7 +43,7 @@ const Layout = () => {
             <Route element={<UserArea />} path="/userArea" />
             <Route
               element={<RegistrationValidated />}
-              path="/RegistrationValidated"
+              path="/registrationValidated"
             />
             <Route element={<RecipeAll />} path="/recipeAll/:name" />
             <Route element={<Detail />} path="/detail/:id" />

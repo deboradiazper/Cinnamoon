@@ -8,11 +8,12 @@ const RecipeList = () => {
     <div className="scroll-container d-flex">
       {store.recipes.map((recipe, index) => {
         return (
-          <div className="col-12 col-md-4" key={index}>
+          <div className="col-12 col-md-3" key={index}>
             <Recipe
               name={recipe.name}
               id={recipe.id}
               image={recipe.image}
+              is_favorite={recipe.is_favorite ? recipe.is_favorite : false}
               categories={recipe.categories.map((value, index) => {
                 return (
                   <img className="categories" key={index} src={value.image} />

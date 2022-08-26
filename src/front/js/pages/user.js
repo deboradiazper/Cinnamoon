@@ -7,14 +7,18 @@ import { UserRegistration } from "./userRegistration";
 import { UserLogin } from "./userLogin";
 
 export const User = () => {
+  const style = {
+    backgroundImage: 'url("/fotolado.jpg")',
+  };
+
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-6">
-          <UserRegistration />
-        </div>
-        <div className="col-6">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
           <UserLogin />
+        </div>
+        <div className="col-md-6">
+          <UserRegistration />
         </div>
       </div>
     </div>
